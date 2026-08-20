@@ -30,7 +30,7 @@ load_dotenv()
 
 llm = ChatGroq(
     groq_api_key=os.getenv("GROQ_API_KEY"),
-    model_name="llama-3.1-8b-instant"  # ✅ THIS WORKS
+    model_name="qwen/qwen3.6-27b"  # Using an available model
 )
 
 if __name__ == "__main__":

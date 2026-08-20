@@ -16,7 +16,10 @@ def get_length_str(length):
 def generate_post(length, language, tag):
     prompt = get_prompt(length, language, tag)
     response = llm.invoke(prompt)
-    return response.content
+    content = response.content
+    if "</think>" in content:
+        content = content.split("</think>")[-1].strip()
+    return content
 
 
 def get_prompt(length, language, tag):
